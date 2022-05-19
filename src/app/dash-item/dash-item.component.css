@@ -1,0 +1,18 @@
+.card {
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: blue;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 10rem;
+}
+
+p {
+    display: block;
+}
+
+.right {
+    width: 100%;
+    text-align: right;
+}
