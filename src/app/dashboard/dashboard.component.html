@@ -1,4 +1,13 @@
 <h1>dashboard</h1>
+<div class="center">
 <div class="act-dash">
-  <app-dash-item [name]="'Activity1'" [id]="0"></app-dash-item>
+
+  <app-dash-item 
+    *ngFor="let activity of activities"
+    [name]="activity.name" 
+    [id]="activity.id"
+    [done]="activity.done"
+    fxFill
+    ></app-dash-item>
+</div>
 </div>

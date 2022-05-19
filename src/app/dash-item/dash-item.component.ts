@@ -14,5 +14,6 @@ export class DashItemComponent implements OnInit {
 
   @Input() name!: string;
   @Input() id!: number;
+  @Input() done!: boolean;
 
 }

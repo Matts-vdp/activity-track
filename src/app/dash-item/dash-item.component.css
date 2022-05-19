@@ -1,18 +1,22 @@
 .card {
-    flex-grow: 1;
-    flex-basis: 0;
     background-color: blue;
-    margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    min-width: 10rem;
-}
 
-p {
-    display: block;
-}
-
-.right {
+  }
+  p {
+    display: inline-block;
+  }
+  
+  
+  .right {
     width: 100%;
     text-align: right;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 40%;
 }
