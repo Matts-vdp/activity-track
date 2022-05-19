@@ -1,0 +1,7 @@
+<div class="list">
+    <div class="card" *ngFor="let activity of activities">
+        <p>{{activity.name}}</p>
+        <p>{{activity.lastDate | date}}</p>
+        <p>{{activity.repeat}}</p>
+    </div>
+</div>

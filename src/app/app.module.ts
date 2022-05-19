@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashItemComponent } from './dash-item/dash-item.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ActivityListComponent } from './activity-list/activity-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DashItemComponent,
-    NavigationComponent
+    NavigationComponent,
+    ActivityListComponent
   ],
   imports: [
     BrowserModule,

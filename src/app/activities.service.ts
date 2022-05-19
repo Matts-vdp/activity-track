@@ -9,9 +9,9 @@ export class ActivitiesService {
 
   constructor() { }
   private activities: Activity[] = [
-    {"id": 0, "name": "Activity0", "done": false},
-    {"id": 1, "name": "Activity1", "done": true},
-    {"id": 2, "name": "Activity2", "done": false},
+    {"id": 0, "name": "Activity0", "done": false, "repeat": 1, "lastDate": new Date(Date.now())},
+    {"id": 1, "name": "Activity1", "done": true, "repeat": 2, "lastDate": new Date(Date.now())},
+    {"id": 2, "name": "Activity2", "done": false, "repeat": 3, "lastDate": new Date(Date.now())},
 
   ] 
 
