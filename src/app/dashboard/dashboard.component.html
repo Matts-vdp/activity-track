@@ -1,5 +1,5 @@
-<h1>dashboard</h1>
 <div class="center">
+<h1>dashboard</h1>
 <div class="act-dash">
 
   <app-dash-item 
@@ -7,6 +7,7 @@
     [name]="activity.name" 
     [id]="activity.id"
     [done]="activity.done"
+    (clickEvent)="setDone($event)"
     fxFill
     ></app-dash-item>
 </div>

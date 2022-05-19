@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dash-item',
@@ -15,5 +15,9 @@ export class DashItemComponent implements OnInit {
   @Input() name!: string;
   @Input() id!: number;
   @Input() done!: boolean;
+  @Output() clickEvent = new EventEmitter<number>();
 
+  click(){
+    this.clickEvent.emit(this.id);
+  }
 }

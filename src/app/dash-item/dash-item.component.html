@@ -1,6 +1,6 @@
-<div class="card">
+<div [ngClass]="{'done': done, 'card':!done}" class="card">
     <p>{{name}}</p>
     <div class="right">
-        <button>Done</button>
+        <button (click)="click()">Done</button>
     </div>
 </div>

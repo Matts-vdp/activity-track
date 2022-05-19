@@ -18,4 +18,10 @@ export class ActivitiesService {
   getActivities(): Activity[]{
     return this.activities;
   }
+
+  toggleDone(id: number): void {
+    let act = this.activities.find(a => a.id == id)
+    if (act != null)
+      act.done = !act.done;
+  }
 }

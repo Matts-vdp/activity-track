@@ -1,22 +1,28 @@
 .card {
-    background-color: blue;
-    padding: 10px;
-    border-radius: 10px;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+.done {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 10px;
+}
 
-  }
-  p {
-    display: inline-block;
-  }
-  
-  
-  .right {
-    width: 100%;
-    text-align: right;
-  }
-  :host {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    min-height: 0;
-    min-width: 40%;
+p {
+  display: inline-block;
+}
+
+
+.right {
+  width: 100%;
+  text-align: right;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 40%;
 }
