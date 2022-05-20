@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivitiesService } from '../activities.service';
-import { Activity } from '../activity';
+import { Activity, nextDay } from '../activity';
 
 @Component({
   selector: 'app-activity-list',
@@ -21,5 +21,7 @@ export class ActivityListComponent implements OnInit {
   getActivities():void {
     this.activities = this.activitiesService.getActivities();
   }
-
+  nextDate(activity: Activity) {
+    return nextDay(activity);
+  }
 }

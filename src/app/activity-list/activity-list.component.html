@@ -1,7 +1,8 @@
 <div class="list">
     <div class="card" *ngFor="let activity of activities">
         <p>{{activity.name}}</p>
-        <p>{{activity.startDate | date}}</p>
+        <p>{{nextDate(activity) | date}}</p>
         <p>{{activity.repeat}}</p>
+        <button>del</button>
     </div>
 </div>

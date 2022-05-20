@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Activity } from './activity';
+import { Activity, daysBetween } from './activity';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +57,7 @@ export class ActivitiesService {
         a.done = false;
         return
       }
-      if (this.daysBetween(today, a.lastDate) != 0)
+      if (daysBetween(today, a.lastDate) != 0)
         a.done = false;
     });
   }
@@ -67,14 +67,9 @@ export class ActivitiesService {
     let today = new Date();
     today.setHours(0, 0, 0, 0);
     let curAct = this.activities.filter(a => {
-      let days = this.daysBetween(today, a.startDate);
+      let days = daysBetween(today, a.startDate);
       return !(days % a.repeat);
     });
     return curAct;
-  }
-
-  daysBetween(now: Date, other: Date) {
-    let diff = now.getTime() - other.getTime();
-    return Math.ceil(diff / (1000 * 3600 * 24));
   }
 }
