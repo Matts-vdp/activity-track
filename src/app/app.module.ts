@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashItemComponent } from './dash-item/dash-item.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
+import { AddActivityComponent } from './add-activity/add-activity.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ActivityListComponent } from './activity-list/activity-list.component';
     DashboardComponent,
     DashItemComponent,
     NavigationComponent,
-    ActivityListComponent
+    ActivityListComponent,
+    AddActivityComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

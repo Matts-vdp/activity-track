@@ -1,0 +1,21 @@
+<div class="padded">
+    <h1>Add new activity</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid">
+            <label for="name">Name: </label>
+            <input id="name" type="text" formControlName="name" required>
+    
+            <label for="repeat">Repeat every: </label>
+            <input id="repeat" type="number" formControlName="repeat">
+    
+            <label for="date">Start date: </label>
+            <input id="date" type="date" formControlName="date">
+        </div>
+
+
+
+        <p *ngIf="!form.valid">Complete the form to submit.</p>
+        <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
