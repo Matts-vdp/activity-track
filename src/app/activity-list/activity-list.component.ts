@@ -24,4 +24,7 @@ export class ActivityListComponent implements OnInit {
   nextDate(activity: Activity) {
     return nextDay(activity);
   }
+  delete(id: number) {
+    this.activitiesService.delete(id);
+  }
 }

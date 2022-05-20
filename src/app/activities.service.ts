@@ -35,7 +35,6 @@ export class ActivitiesService {
       else
         act.lastDate = null;
     }
-    console.log(act)
   }
   add(name: string, repeat: number, date: Date) {
     let act: Activity = {
@@ -47,6 +46,12 @@ export class ActivitiesService {
     };
     this.activities.push(act);
     this.maxid++;
+  }
+
+  delete(id: number) {
+    let i = this.activities.findIndex(a => a.id == id);
+    console.log(id, i)
+    this.activities.splice(i,1);
   }
 
   resetDone() {

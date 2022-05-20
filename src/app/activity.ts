@@ -23,6 +23,5 @@ export function nextDay(activity: Activity) {
     today.setHours(0, 0, 0, 0);
     let days = daysBetween(today, activity.startDate);
     let offset = activity.repeat - (days % activity.repeat);
-    console.log(days, offset);
     return addDays(today, offset);
 }

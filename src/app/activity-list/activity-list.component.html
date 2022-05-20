@@ -3,6 +3,6 @@
         <p>{{activity.name}}</p>
         <p>{{nextDate(activity) | date}}</p>
         <p>{{activity.repeat}}</p>
-        <button>del</button>
+        <button (click)="delete(activity.id)">del</button>
     </div>
 </div>
