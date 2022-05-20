@@ -3,5 +3,6 @@ export interface Activity {
     name: string;
     done: boolean;
     repeat: number;
-    lastDate: Date;
+    startDate: Date;
+    lastDate?: Date | null;
 }

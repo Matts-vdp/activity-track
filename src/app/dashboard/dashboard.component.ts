@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
     this.getActivities();
   }
   getActivities():void {
-    this.activities = this.activitiesService.getActivities();
+    this.activities = this.activitiesService.getCurrentActivities();
   }
   setDone(id: number) {
     this.activitiesService.toggleDone(id);
