@@ -16,10 +16,10 @@ export class ActivitiesService {
       repeat: 1, 
       startDate: new Date("2022-05-1"),
       lastDate: new Date("2022-05-20"),
-      color: 'green'
+      color: 'lightgreen'
     },
-    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14"), color: 'blue'},
-    { id: 2, name: "Activity2", done: true, repeat: 3, startDate: new Date("2022-05-20"), color: 'red' },
+    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14"), color: 'lightblue'},
+    { id: 2, name: "Activity2", done: true, repeat: 3, startDate: new Date("2022-05-20"), color: 'lightcoral' },
   ];
   private maxid = 3;
 
