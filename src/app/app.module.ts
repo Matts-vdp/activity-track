@@ -9,6 +9,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { AddActivityComponent } from './add-activity/add-activity.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ColorPickerModule } from '@iplab/ngx-color-picker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ColorPickerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

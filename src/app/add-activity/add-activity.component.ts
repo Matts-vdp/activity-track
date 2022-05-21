@@ -22,14 +22,18 @@ export class AddActivityComponent implements OnInit {
     private activitiesService: ActivitiesService,
     ) { }
 
+  public color = '#adff2f';
+
   ngOnInit(): void {
   }
   onSubmit(){
     if (!this.form.valid) return;
+    console.log(this.color);
     this.activitiesService.add(
       this.form.value.name, 
       this.form.value.repeat,
-      new Date(this.form.value.date)
+      new Date(this.form.value.date),
+      this.color
       )
       this.form.reset();
   }

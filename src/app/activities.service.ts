@@ -37,14 +37,14 @@ export class ActivitiesService {
         act.lastDate = null;
     }
   }
-  add(name: string, repeat: number, date: Date) {
+  add(name: string, repeat: number, date: Date, color: string) {
     let act: Activity = {
       id: this.maxid,
       name: name,
       repeat: repeat,
       startDate: date,
       done: false,
-      color: 'yellow',
+      color: color,
     };
     this.activities.push(act);
     this.maxid++;
