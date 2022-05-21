@@ -1,20 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --back: white;
+    --navigation: #121212;
+    --navselect: greenyellow;
+    --navtext: white;
+    --items: hsl(107, 100%, 50%);
+    --items-done: lightgrey;
+    --submit: greenyellow;
+    --text: black;
+    --accent: greenyellow;
+    --accentselect: rgb(152, 253, 0);
+}
+
+h1, p {
+    color: var(--text);
+}
+
 body {
     margin: 0;
+    background-color: var(--back);
 }
 
 .card {
-    background-color: lightblue;
+    background-color: var(--items);
     padding: 10px;
     border-radius: 10px;
 }
 
 .done {
-    background-color: lightgray;
+    background-color: var(--items-done);
     padding: 10px;
     border-radius: 10px;
 }
+
 .padded {
     padding: 10px;
-  }
-  
+}

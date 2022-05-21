@@ -1,8 +1,15 @@
-<div class="list">
-    <div class="card" *ngFor="let activity of activities">
-        <p>{{activity.name}}</p>
-        <p>{{nextDate(activity) | date}}</p>
-        <p>{{activity.repeat}}</p>
-        <button (click)="delete(activity.id)">del</button>
-    </div>
+<div class="list" *ngIf="activities.length">
+    <p class="head"><b>Name</b></p>
+    <p class="head"><b>Repeat</b></p>
+    <p class="head"><b>Next time</b></p>
+    <div></div>
+    <ng-container *ngFor="let activity of activities">
+        <p class="name">{{activity.name}}</p>
+        <p class="other">{{activity.repeat}}</p>
+        <p class="other">{{nextDate(activity) | date}}</p>
+        <div class="but"><button (click)="delete(activity.id)">del</button></div>
+    </ng-container>
+</div>
+<div class="center" *ngIf="!activities.length">
+    <h1>You have no activities</h1>
 </div>

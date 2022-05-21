@@ -1,29 +1,41 @@
 nav {
-    background-color: lightcoral;
-    padding-left: 20px;
+    background-color: var(--navigation);
     padding-right: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
-
 nav a {
-    padding: 10px 20px;
     text-decoration: none;
-    display: inline-block;
-    color: #3d3d3d;
     font-size: larger;
 }
+nav .other {
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--navtext);
+}
 
-nav a:hover {
-    color: white;
-    background-color: rgb(187, 59, 59);
+nav .other:hover {
+    color: var(--text);
+    background-color: var(--navselect);
 }
 
 nav a.active {
-    background-color: rgb(187, 59, 59);
-    color: white;
+    background-color: var(--navselect);
+    color: var(--navtext);
 }
 .add {
     font-size: larger;
+    background-color: var(--accent);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    border-radius: 30px;
+    color: black;
+}
+nav .add:hover {
+    color: var(--text);
+    background-color: var(--accentselect);
 }

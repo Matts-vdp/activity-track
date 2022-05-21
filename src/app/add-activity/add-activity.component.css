@@ -1,15 +1,21 @@
 p {
-    color:red;
+    color:lightcoral;
 }
+
 .grid {
     display: grid;
     grid-template-columns: 0.6fr 1fr;
     row-gap: 10px;
     margin-bottom: 30px;
 }
+
 button {
-    background-color: greenyellow;
+    background-color: var(--submit);
     border-style: none;
     border-radius: 10px;
     padding: 10px;
+}
+
+label {
+    color: var(--text);
 }

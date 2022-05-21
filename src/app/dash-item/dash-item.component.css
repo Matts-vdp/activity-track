@@ -1,9 +1,6 @@
-
-
 p {
   display: inline-block;
 }
-
 
 .right {
   width: 100%;
@@ -16,4 +13,17 @@ p {
   flex: 1 1 auto;
   min-height: 0;
   min-width: 40%;
+}
+
+button {
+  color: var(--text);
+  background-color: var(--back);
+  border-style: none;
+  padding:10px;
+  border-radius: 50px;
+}
+
+button:hover {
+  background-color: var(--text);
+  color: var(--back);
 }
