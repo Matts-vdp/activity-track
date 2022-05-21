@@ -1,7 +1,7 @@
 :root {
     --back: white;
     --navigation: #121212;
-    --navselect: greenyellow;
+    --navselect: #adff2f;
     --navtext: white;
     --items: hsl(107, 100%, 50%);
     --items-done: lightgrey;
