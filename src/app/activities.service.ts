@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Activity, daysBetween } from './activity';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 
+
 export class ActivitiesService {
 
-  constructor() { }
+  constructor() {
+    this.readFile()
+   }
   private activities: Activity[] = [
     { 
       id: 0, 
@@ -35,6 +44,7 @@ export class ActivitiesService {
         act.lastDate = new Date();
       else
         act.lastDate = null;
+      this.writeFile();
     }
   }
   add(name: string, repeat: number, date: Date, color: string) {
@@ -48,25 +58,31 @@ export class ActivitiesService {
     };
     this.activities.push(act);
     this.maxid++;
+    this.writeFile();
   }
 
   delete(id: number) {
     let i = this.activities.findIndex(a => a.id == id);
-    console.log(id, i)
     this.activities.splice(i,1);
+    this.writeFile();
   }
 
   resetDone() {
+    let action = false;
     let today = new Date();
     today.setHours(0, 0, 0, 0);
     this.activities.forEach(a => {
       if (a.lastDate == null) {
+        if (a.done) action = true;
         a.done = false;
         return
       }
-      if (daysBetween(today, a.lastDate) != 0)
+      if (daysBetween(today, a.lastDate) != 0) {
+        if (a.done) action = true;
         a.done = false;
+      }
     });
+    if (action) this.writeFile();
   }
 
   getCurrentActivities() {
@@ -79,4 +95,29 @@ export class ActivitiesService {
     });
     return curAct;
   }
+
+  async writeFile() {
+    let data = JSON.stringify(this.activities);
+    await Filesystem.writeFile({
+      path: 'activities.json',
+      data: data,
+      directory: Directory.Data,
+      encoding: Encoding.UTF8,
+    });
+  }
+  async readFile() {
+    const contents = await Filesystem.readFile({
+      path: 'activities.json',
+      directory: Directory.Data,
+      encoding: Encoding.UTF8,
+    }).then(v=> {
+      if (v.data != '')
+        this.activities = JSON.parse(v.data);
+      this.activities.forEach(a => {
+        a.startDate = new Date(a.startDate);
+        if (a.lastDate != null)
+          a.lastDate = new Date(a.lastDate);
+      })
+    });
+  };
 }
