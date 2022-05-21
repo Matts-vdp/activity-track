@@ -16,12 +16,8 @@ nav .other {
     color: var(--navtext);
 }
 
-nav .other:hover {
-    color: var(--text);
-    background-color: var(--navselect);
-}
 
-nav a.active {
+nav a:active {
     background-color: var(--navselect);
     color: var(--navtext);
 }
@@ -35,7 +31,7 @@ nav a.active {
     border-radius: 30px;
     color: black;
 }
-nav .add:hover {
+nav .add:active {
     color: var(--text);
     background-color: var(--accentselect);
 }

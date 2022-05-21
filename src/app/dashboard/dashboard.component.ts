@@ -16,6 +16,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getActivities();
+    this.activitiesService.loadEvent.subscribe(res => { 
+      this.getActivities();
+    })
   }
   getActivities():void {
     this.activities = this.activitiesService.getCurrentActivities();

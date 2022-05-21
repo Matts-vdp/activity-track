@@ -24,7 +24,7 @@ button {
   border-radius: 50px;
 }
 
-button:hover {
+button:active {
   background-color: var(--text);
   color: var(--back);
 }

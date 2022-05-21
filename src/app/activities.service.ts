@@ -1,10 +1,6 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Activity, daysBetween } from './activity';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
-
-
-
-
 
 
 @Injectable({
@@ -14,20 +10,26 @@ import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 
 export class ActivitiesService {
 
+  loadEvent = new EventEmitter();
   constructor() {
     this.readFile()
-   }
+    let max = 0;
+    this.activities.forEach(a => {
+      if (a.id > max) max = a.id;
+    });
+    this.maxid = max + 1
+  }
   private activities: Activity[] = [
-    { 
-      id: 0, 
-      name: "Activity0", 
-      done: false, 
-      repeat: 1, 
+    {
+      id: 0,
+      name: "Activity0",
+      done: false,
+      repeat: 1,
       startDate: new Date("2022-05-1"),
       lastDate: new Date("2022-05-20"),
       color: 'lightgreen'
     },
-    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14"), color: 'lightblue'},
+    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14"), color: 'lightblue' },
     { id: 2, name: "Activity2", done: true, repeat: 3, startDate: new Date("2022-05-20"), color: 'lightcoral' },
   ];
   private maxid = 3;
@@ -38,7 +40,7 @@ export class ActivitiesService {
 
   toggleDone(id: number): void {
     let act = this.activities.find(a => a.id == id)
-    if (act != null){
+    if (act != null) {
       act.done = !act.done;
       if (act.done)
         act.lastDate = new Date();
@@ -63,7 +65,7 @@ export class ActivitiesService {
 
   delete(id: number) {
     let i = this.activities.findIndex(a => a.id == id);
-    this.activities.splice(i,1);
+    this.activities.splice(i, 1);
     this.writeFile();
   }
 
@@ -110,14 +112,16 @@ export class ActivitiesService {
       path: 'activities.json',
       directory: Directory.Data,
       encoding: Encoding.UTF8,
-    }).then(v=> {
-      if (v.data != '')
+    }).then(v => {
+      if (v.data != '') {
         this.activities = JSON.parse(v.data);
-      this.activities.forEach(a => {
-        a.startDate = new Date(a.startDate);
-        if (a.lastDate != null)
-          a.lastDate = new Date(a.lastDate);
-      })
-    });
-  };
+        this.activities.forEach(a => {
+          a.startDate = new Date(a.startDate);
+          if (a.lastDate != null)
+            a.lastDate = new Date(a.lastDate);
+        })
+        this.loadEvent.emit();
+      }
+  });
+};
 }
