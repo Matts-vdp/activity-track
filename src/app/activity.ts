@@ -5,6 +5,7 @@ export interface Activity {
     repeat: number;
     startDate: Date;
     lastDate?: Date | null;
+    color: string;
 }
 
 export function daysBetween(now: Date, other: Date) {

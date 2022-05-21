@@ -6,10 +6,6 @@
     align-items: center;
 }
 
-.name,
-.other {
-    background-color: var(--items);
-}
 
 .name {
     border-top-left-radius: 10px;
@@ -29,7 +25,6 @@ button {
 
 .but {
     height: 100%;
-    background-color: var(--items);
     display: flex;
     justify-content: center;
     align-content: center;

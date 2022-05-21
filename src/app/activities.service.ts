@@ -15,10 +15,11 @@ export class ActivitiesService {
       done: false, 
       repeat: 1, 
       startDate: new Date("2022-05-1"),
-      lastDate: new Date("2022-05-20")
+      lastDate: new Date("2022-05-20"),
+      color: 'green'
     },
-    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14") },
-    { id: 2, name: "Activity2", done: true, repeat: 3, startDate: new Date("2022-05-20") },
+    { id: 1, name: "Activity1", done: true, repeat: 2, startDate: new Date("2022-03-14"), color: 'blue'},
+    { id: 2, name: "Activity2", done: true, repeat: 3, startDate: new Date("2022-05-20"), color: 'red' },
   ];
   private maxid = 3;
 
@@ -42,7 +43,8 @@ export class ActivitiesService {
       name: name,
       repeat: repeat,
       startDate: date,
-      done: false
+      done: false,
+      color: 'yellow',
     };
     this.activities.push(act);
     this.maxid++;

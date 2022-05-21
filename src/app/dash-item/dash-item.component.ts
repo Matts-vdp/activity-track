@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'app-dash-item',
@@ -12,12 +13,17 @@ export class DashItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() name!: string;
-  @Input() id!: number;
-  @Input() done!: boolean;
+  @Input() activity!: Activity;
   @Output() clickEvent = new EventEmitter<number>();
 
   click(){
-    this.clickEvent.emit(this.id);
+    this.clickEvent.emit(this.activity.id);
+  }
+
+  getColor() {
+    if (this.activity.done) {
+      return 'var(--items-done)';
+    }
+    return this.activity.color;
   }
 }

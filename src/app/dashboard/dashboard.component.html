@@ -4,9 +4,7 @@
 
   <app-dash-item 
     *ngFor="let activity of activities"
-    [name]="activity.name" 
-    [id]="activity.id"
-    [done]="activity.done"
+    [activity]="activity"
     (clickEvent)="setDone($event)"
     fxFill
     ></app-dash-item>
