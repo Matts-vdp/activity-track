@@ -1,13 +1,22 @@
 <div class="list" *ngIf="activities.length">
     <p class="head"><b>Name</b></p>
-    <p class="head"><b>Repeat</b></p>
+    <p class="head"><b>Every</b></p>
     <p class="head"><b>Next time</b></p>
     <div></div>
     <ng-container *ngFor="let activity of activities">
-        <p class="name" [ngStyle]="{'background-color': activity.color}">{{activity.name}}</p>
-        <p class="other" [ngStyle]="{'background-color': activity.color}">{{activity.repeat}}</p>
-        <p class="other" [ngStyle]="{'background-color': activity.color}">{{nextDate(activity) | date}}</p>
-        <div class="but" [ngStyle]="{'background-color': activity.color}"><button (click)="delete(activity.id)">del</button></div>
+        <div class="item name" [ngStyle]="{'background-color': activity.color}">
+            <p>{{activity.name}}</p>
+        </div>
+        <div class="item repeat" [ngStyle]="{'background-color': activity.color}">
+            <p class="other">{{activity.repeat}}</p>
+        </div>
+        <div class="item" [ngStyle]="{'background-color': activity.color}">
+            <p class="other">{{nextDate(activity) | date}}</p>
+        </div>
+        <div class="item but" [ngStyle]="{'background-color': activity.color}">
+            <button (click)="delete(activity.id)">del</button>
+        </div>
+
     </ng-container>
 </div>
 <div class="center" *ngIf="!activities.length">

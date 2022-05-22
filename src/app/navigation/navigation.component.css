@@ -16,7 +16,6 @@ nav .other {
     color: var(--navtext);
 }
 
-
 nav a:active {
     background-color: var(--navselect);
     color: var(--navtext);
@@ -24,6 +23,7 @@ nav a:active {
 .add {
     font-size: larger;
     background-color: var(--accent);
+    height: max-content;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
