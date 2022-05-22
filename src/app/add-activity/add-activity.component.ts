@@ -34,6 +34,6 @@ export class AddActivityComponent implements OnInit {
       new Date(this.form.value.date),
       this.color
       )
-      this.form.reset();
+      this.form.reset({name:'', repeat:1, date:formatDate(new Date(), "yyyy-MM-dd", "en")});
   }
 }
