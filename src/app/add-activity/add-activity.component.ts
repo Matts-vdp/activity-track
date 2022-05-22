@@ -28,7 +28,6 @@ export class AddActivityComponent implements OnInit {
   }
   onSubmit(){
     if (!this.form.valid) return;
-    console.log(this.color);
     this.activitiesService.add(
       this.form.value.name, 
       this.form.value.repeat,
